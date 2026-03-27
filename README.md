@@ -9,12 +9,13 @@ I built this entire thing from scratch using Python, and honestly, it was quite 
 
 ## What Is Satya Sangeet Harmonium?
 
-So, Satya Sangeet Harmonium is basically an **AI-powered music production system**. Think of it like having a super smart music assistant that can:
+So, Satya Sangeet Harmonium is basically an **Web-Based Harmonium System with an AcademyAI controlled by the parent AI that "SNSAI" which is a voice based teaching AI that teaches the manual to play harmonium to the students and also answers any external questions and interact and an** **AI-powered music production system** that is in production now and **not released uptill now**. Think of it like having a super smart music assistant that can:
 
-1. **Compose music** based on emotions (like happy, sad, energetic, etc.)
-2. **Mix and master** your tracks automatically
+1. **Compose music** based on emotions (like happy, sad, energetic, etc.) **Still in Dev. stage**
+2. **Mix and master** your tracks automatically **Still in Dev. stage**
 3. **Teach you harmonium** with a voice coach that actually talks to you
-4. **Export your music** as WAV files that you can play anywhere
+4. **AcademyAI (by SNSAI)** that teaches and asnwers to the student having conversation with it, **in the open manual page**
+5. **Export your music** as WAV files that you can play anywhere **Still in Dev. stage**
 
 The cool part? I made the entire core system using only Python's built-in libraries - no fancy external packages needed! This means you can run it on any computer with Python installed.
 
