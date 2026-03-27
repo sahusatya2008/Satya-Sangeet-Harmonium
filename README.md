@@ -1,14 +1,15 @@
-# 🎵 SonicForge X - My AI Music Project
+# Satya Sangeet Harmonium - My First AI Music Project
 
-Hey there! Welcome to my project documentation. My name is **Satya Narayan Sahu**, and I'm a student who loves both coding and music. This is my project called **SonicForge X** - basically, it's an AI system that can compose music, mix tracks, and even teach you how to play harmonium!
+Hey there! Welcome to my project documentation. My name is **Satya Narayan Sahu**, and I'm a student who loves both coding and music. This is my project called **Satya Sangeet
+Harmonium** - basically, it's an AI system that can compose music, mix tracks, and even teach you how to play harmonium!
 
 I built this entire thing from scratch using Python, and honestly, it was quite an adventure. Let me tell you everything about it!
 
 ---
 
-## 📖 What Is SonicForge X?
+## What Is Satya Sangeet Harmonium?
 
-So, SonicForge X is basically an **AI-powered music production system**. Think of it like having a super smart music assistant that can:
+So, Satya Sangeet Harmonium is basically an **AI-powered music production system**. Think of it like having a super smart music assistant that can:
 
 1. **Compose music** based on emotions (like happy, sad, energetic, etc.)
 2. **Mix and master** your tracks automatically
@@ -19,7 +20,7 @@ The cool part? I made the entire core system using only Python's built-in librar
 
 ---
 
-## 🏗️ How I Built This (The Architecture)
+## How I Built This (The Architecture)
 
 Let me break down how the whole system works:
 
@@ -104,7 +105,7 @@ The browser-based interface:
 
 ---
 
-## 🧠 How The AI Works
+## How The AI Works
 
 ### The Composition Algorithm
 
@@ -162,7 +163,7 @@ The voice coach uses a pattern-matching algorithm:
 
 ---
 
-## 🔧 Technical Stuff (For The Nerds)
+## Technical Stuff (For The Nerds)
 
 ### Data Structures
 
@@ -240,7 +241,7 @@ For voice output, I use **edge-tts** (Microsoft's TTS service):
 
 ---
 
-## 🚀 How to Run This
+## How to Run This
 
 ### Option 1: Web App (Easiest)
 
@@ -286,7 +287,7 @@ python3 -m unittest tests.test_composer
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 Here's how I organized all the files:
 
@@ -333,7 +334,7 @@ SonicForge/
 
 ---
 
-## 🎯 What Makes This Special
+## What Makes This Special
 
 ### 1. Zero External Dependencies (Almost!)
 
@@ -371,7 +372,7 @@ You can use it as:
 
 ---
 
-## 🔮 Future Plans (Phase 2)
+## Future Plans (Phase 2)
 
 I have big plans for the future:
 
@@ -385,7 +386,7 @@ I have big plans for the future:
 
 ---
 
-## 🧪 Testing
+## Testing
 
 I wrote unit tests to make sure everything works:
 
@@ -422,7 +423,7 @@ But hey, it's a Phase 1 MVP! The foundation is solid for future improvements.
 
 ---
 
-## 💡 What I Learned
+## What I Learned
 
 Building this project taught me:
 
@@ -452,7 +453,7 @@ It has:
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
 This is my personal project, but if you want to suggest improvements or report bugs, feel free to reach out!
 
@@ -460,7 +461,7 @@ This is my personal project, but if you want to suggest improvements or report b
 
 ---
 
-## ⚠️ COPYRIGHT NOTICE
+## COPYRIGHT NOTICE
 
 **© 2026 Satya Narayan Sahu. All Rights Reserved.**
 
@@ -485,7 +486,7 @@ For licensing inquiries, contact: **Satya Narayan Sahu**
 
 ---
 
-## 📊 Project Stats
+## Project Stats
 
 - **Total Lines of Code**: ~5,000+
 - **Programming Languages**: Python, JavaScript, HTML, CSS
@@ -496,7 +497,7 @@ For licensing inquiries, contact: **Satya Narayan Sahu**
 
 ---
 
-## 🎉 Conclusion
+## Conclusion
 
 SonicForge X is my passion project that combines my love for music and coding. It's not perfect, but it's a solid foundation for an AI-powered music production system.
 
