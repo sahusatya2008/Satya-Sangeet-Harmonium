@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SNSAI SonicForge X</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="shell">
+      <aside class="controls">
+        <div class="brand">
+          <p class="eyebrow">SNSAI</p>
+          <h1>SonicForge X</h1>
+          <p class="tagline">AI arrangement and a dedicated harmonium atelier with real sampled playback, drones, and guided phrase practice.</p>
+          <a class="feature-link" href="/harmonium">Open 3D Harmonium Atelier</a>
+        </div>
+
+        <section class="control-card">
+          <div class="card-header">
+            <h2>AI Arrangement</h2>
+            <p>Generate a multitrack sketch, preview it in the browser, and export a WAV.</p>
+          </div>
+          <label>
+            Project Name
+            <input id="name" value="Solar Drift" />
+          </label>
+          <label>
+            Genre
+            <input id="genre" value="cinematic-electronic" />
+          </label>
+          <label>
+            Tempo <span id="tempo-value">118</span>
+            <input id="tempo" type="range" min="80" max="150" value="118" />
+          </label>
+          <label>
+            Bars
+            <input id="bars" type="number" min="8" max="16" value="8" />
+          </label>
+          <label>
+            Valence <span id="valence-value">62</span>
+            <input id="valence" type="range" min="0" max="100" value="62" />
+          </label>
+          <label>
+            Energy <span id="energy-value">68</span>
+            <input id="energy" type="range" min="0" max="100" value="68" />
+          </label>
+          <label>
+            Tension <span id="tension-value">48</span>
+            <input id="tension" type="range" min="0" max="100" value="48" />
+          </label>
+          <label>
+            Lyrics
+            <textarea id="lyrics" rows="4">we burn the night into a silver line</textarea>
+          </label>
+          <div class="actions">
+            <button id="generate">Generate Session</button>
+            <button id="play" class="secondary">Play Preview</button>
+            <button id="mix" class="secondary">Auto Mix</button>
+            <button id="download" class="secondary">Export WAV</button>
+          </div>
+        </section>
+
+        <section class="control-card">
+          <div class="card-header">
+            <h2>Harmonium Focus</h2>
+            <p>Use the dedicated instrument page for front-facing 3D keys, bellows, stops, drones, and SNS AI phrase guidance.</p>
+          </div>
+          <div class="spotlight-list">
+            <div class="spotlight-item">Real sampled harmonium anchors with cleaner sustain handling</div>
+            <div class="spotlight-item">Keyboard labels with Western notes and Sargam roles</div>
+            <div class="spotlight-item">Drone switches, bellows pressure, and AI phrase preview</div>
+          </div>
+          <a class="feature-link alt" href="/harmonium">Launch Harmonium</a>
+        </section>
+
+        <p id="status">Ready.</p>
+      </aside>
+
+      <main class="workspace">
+        <section class="hero-card">
+          <div>
+            <p class="eyebrow">Dual Runtime</p>
+            <h2>Arrangement workspace with harmonium as the featured instrument</h2>
+            <p>Generate sketch sessions here, then move into the dedicated harmonium page for realistic note playback and performance-oriented control.</p>
+          </div>
+          <div class="metric-stack" id="metrics"></div>
+        </section>
+
+        <section class="panel">
+          <div class="panel-header">
+            <h3>Arrangement Timeline</h3>
+            <p id="transport">No project loaded</p>
+          </div>
+          <div id="timeline" class="timeline"></div>
+        </section>
+
+        <section class="panel">
+          <div class="panel-header">
+            <h3>Harmonium Atelier</h3>
+            <p>Dedicated page for the full harmonium experience</p>
+          </div>
+          <div class="feature-stage">
+            <div class="feature-copy">
+              <p class="eyebrow">Featured Instrument</p>
+              <h3>3D Harmonium with sampled playback</h3>
+              <p class="tagline">The harmonium lives on its own page so its sound engine, UI controls, drones, and AI guidance can stay focused and stable.</p>
+              <div class="spotlight-list">
+                <div class="spotlight-item">Front-facing playable keybed with note labels</div>
+                <div class="spotlight-item">Real sample engine plus drone and bellows controls</div>
+                <div class="spotlight-item">SNS AI phrase coaching for classical, bhajan, film, and taan practice</div>
+              </div>
+              <a class="feature-link" href="/harmonium">Go To Harmonium Atelier</a>
+            </div>
+            <div class="feature-panel">
+              <div class="harmonium-preview">
+                <div class="harmonium-preview__body"></div>
+                <div class="harmonium-preview__keys">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+                <div class="harmonium-preview__stops">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel split">
+          <div>
+            <div class="panel-header">
+              <h3>AI Suggestions</h3>
+              <p>Live deltas for the active session</p>
+            </div>
+            <div id="suggestions" class="suggestions"></div>
+          </div>
+          <div>
+            <div class="panel-header">
+              <h3>Detail Feed</h3>
+              <p>Voice plan and session notes</p>
+            </div>
+            <pre id="detail-feed" class="voice-plan">No detail feed loaded.</pre>
+          </div>
+        </section>
+      </main>
+    </div>
+    <script src="/app.js" defer></script>
+  </body>
+</html>

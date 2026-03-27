@@ -1,0 +1,558 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Satya Sangeet Harmonium Academy</title>
+    <link rel="stylesheet" href="/harmonium_docs.css" />
+  </head>
+  <body class="academy-page">
+    <div class="academy-shell">
+      <aside class="academy-sidebar">
+        <div class="academy-sidebar__card academy-brand">
+          <p class="academy-eyebrow">Satya Sangeet Academy</p>
+          <h1>Harmonium Documentation And Professional Training</h1>
+          <p class="academy-lede">
+            A complete learning path for the SNSAI harmonium experience. This guide is built to help a first-time player become controlled, musical, and stage-ready on the same instrument page you are using right now.
+          </p>
+          <div class="academy-actions">
+            <a class="academy-button academy-button--primary" href="/harmonium">Return To Harmonium</a>
+            <a class="academy-button academy-button--secondary" href="#training-path">Start Training Path</a>
+          </div>
+        </div>
+
+        <section class="academy-sidebar__card academy-voice" aria-label="SNSAI academy voice coach">
+          <div class="academy-voice__header">
+            <div>
+              <p class="academy-nav__title">SNSAI Voice Coach</p>
+              <h2>Live Human-Like Training Guide</h2>
+            </div>
+            <span id="academy-voice-indicator" class="academy-voice__indicator">Mic Off</span>
+          </div>
+          <p id="academy-voice-status" class="academy-voice__status">
+            Enable the voice coach and it will ask if it should start explaining the training. After that it keeps listening for natural spoken requests, questions, lesson jumps, and pause or continue instructions in normal conversation.
+          </p>
+          <div class="academy-llm" aria-label="Academy language model status">
+            <div class="academy-llm__copy">
+              <span class="academy-voice__label">LLM Brain</span>
+              <strong id="academy-llm-status">Checking language model availability</strong>
+              <p id="academy-llm-detail" class="academy-llm__detail">
+                The academy will report here when a real local language model is active for understanding and replies.
+              </p>
+            </div>
+            <button id="academy-llm-refresh" class="academy-button academy-button--secondary" type="button">Refresh Brain</button>
+          </div>
+          <div class="academy-voice__controls">
+            <button id="academy-voice-enable" class="academy-button academy-button--primary" type="button">Enable Voice Coach</button>
+            <button id="academy-voice-continue" class="academy-button academy-button--secondary" type="button">Continue</button>
+            <button id="academy-voice-stop" class="academy-button academy-button--secondary" type="button">Stop</button>
+            <button id="academy-voice-restart" class="academy-button academy-button--secondary" type="button">From Start</button>
+          </div>
+          <label class="academy-voice__language" for="academy-voice-language">
+            <span class="academy-voice__label">Microphone Language</span>
+            <select id="academy-voice-language">
+              <option value="en-IN" selected>English India</option>
+              <option value="hi-IN">Hindi India</option>
+              <option value="en-US">English US</option>
+              <option value="en-GB">English UK</option>
+            </select>
+          </label>
+          <div class="academy-voice__tips">
+            <span class="academy-voice__tip">Say “yes” to begin</span>
+            <span class="academy-voice__tip">Say “stop” anytime</span>
+            <span class="academy-voice__tip">Say “continue” to resume</span>
+            <span class="academy-voice__tip">Ask “who are you” or “what do you do”</span>
+            <span class="academy-voice__tip">Ask music questions like “what is a raga”</span>
+          </div>
+          <div class="academy-soundscape">
+            <div class="academy-soundscape__header">
+              <div>
+                <span class="academy-voice__label">Classical Ambience</span>
+                <strong>Soft Tanpura-Style Background</strong>
+              </div>
+              <button id="academy-ambience-toggle" class="academy-button academy-button--secondary" type="button">Start Ambience</button>
+            </div>
+            <label class="academy-soundscape__slider" for="academy-ambience-volume">
+              <span>Ambience Volume</span>
+              <input id="academy-ambience-volume" type="range" min="0" max="100" step="1" value="28" />
+            </label>
+            <p id="academy-ambience-status" class="academy-soundscape__status">
+              Background classical ambience is off. You can turn it on manually or ask the coach to play soft classical music.
+            </p>
+          </div>
+          <div class="academy-voice__readout">
+            <span class="academy-voice__label">Current lesson</span>
+            <strong id="academy-voice-current">Waiting to begin</strong>
+          </div>
+          <div class="academy-voice__readout">
+            <span class="academy-voice__label">Heard from microphone</span>
+            <strong id="academy-voice-heard">Voice coach not active yet</strong>
+          </div>
+          <div class="academy-voice__readout">
+            <span class="academy-voice__label">Assistant Reply</span>
+            <strong id="academy-voice-reply">The assistant reply will appear here even if speech playback is unavailable.</strong>
+          </div>
+          <section class="academy-chat" aria-label="Assistant conversation">
+            <div class="academy-chat__header">
+              <div>
+                <span class="academy-voice__label">Assistant Chat</span>
+                <strong>Ask By Voice Or Type Anything</strong>
+              </div>
+              <span class="academy-chat__hint">General knowledge, music questions, and lesson help</span>
+            </div>
+            <div id="academy-chat-log" class="academy-chat__log" role="log" aria-live="polite">
+              <article class="academy-chat__message academy-chat__message--assistant">
+                <span class="academy-chat__speaker">Assistant</span>
+                <p>Hello. Ask me anything here if the microphone is unclear or if you want a written answer on screen.</p>
+              </article>
+            </div>
+            <form id="academy-chat-form" class="academy-chat__form">
+              <label class="academy-chat__field" for="academy-chat-input">
+                <span class="academy-voice__label">Type Your Question</span>
+                <textarea id="academy-chat-input" rows="3" placeholder="Ask about harmonium, music, or any outside information you want to know."></textarea>
+              </label>
+              <button id="academy-chat-send" class="academy-button academy-button--primary" type="submit">Ask Assistant</button>
+            </form>
+          </section>
+        </section>
+
+        <nav class="academy-sidebar__card academy-nav" aria-label="Documentation sections">
+          <p class="academy-nav__title">Training Navigator</p>
+          <a href="#training-path">1. Training Path</a>
+          <a href="#instrument-map">2. Instrument Map</a>
+          <a href="#posture-bellows">3. Posture And Bellows</a>
+          <a href="#fingering">4. Fingering System</a>
+          <a href="#foundation-drills">5. Foundation Drills</a>
+          <a href="#ornamentation">6. Ornamentation</a>
+          <a href="#accompaniment">7. Accompaniment Skills</a>
+          <a href="#solo-playing">8. Solo Playing</a>
+          <a href="#snsai-controls">9. SNSAI Controls</a>
+          <a href="#professional-routine">10. Professional Routine</a>
+          <a href="#performance-checklist">11. Stage Checklist</a>
+        </nav>
+
+        <div class="academy-sidebar__card academy-quickcard">
+          <p class="academy-nav__title">Fast Start</p>
+          <div class="academy-check">Set `Sa Root` to your vocal tonic before practice.</div>
+          <div class="academy-check">Keep one hand responsible for keys and one for bellows discipline.</div>
+          <div class="academy-check">Train slow first, then increase speed only after the tone stays even.</div>
+          <div class="academy-check">Use drones and SNS AI phrases only after the scale is clean and stable.</div>
+        </div>
+      </aside>
+
+      <main class="academy-main">
+        <section class="academy-hero">
+          <div class="academy-hero__copy">
+            <p class="academy-eyebrow">Concert Discipline</p>
+            <h2>Learn The Instrument, Then Learn Control, Then Learn Expression</h2>
+            <p>
+              Good harmonium playing is not only about pressing the correct notes. Professional playing comes from steady air, clean note attack, thoughtful fingering, balanced drone use, and control of phrase shape. The SNSAI harmonium interface already exposes the exact controls that matter: tonic, octave, reed stops, bellows pressure, attack, release, drone volume, coupler, and AI phrase coaching. This documentation teaches how to use each one musically.
+            </p>
+          </div>
+          <div class="academy-hero__stats">
+            <div class="academy-stat">
+              <span>Target Outcome</span>
+              <strong>Stable Tone</strong>
+            </div>
+            <div class="academy-stat">
+              <span>Core Skill</span>
+              <strong>Bellows Control</strong>
+            </div>
+            <div class="academy-stat">
+              <span>Practice Method</span>
+              <strong>Slow Precision</strong>
+            </div>
+            <div class="academy-stat">
+              <span>Professional Goal</span>
+              <strong>Confident Phrasing</strong>
+            </div>
+          </div>
+        </section>
+
+        <section id="training-path" class="academy-section">
+          <div class="academy-section__header">
+            <p class="academy-eyebrow">1. Training Path</p>
+            <h2>Follow This Order To Become Reliable And Musical</h2>
+          </div>
+          <div class="academy-path-grid">
+            <article class="academy-path-card">
+              <span class="academy-step">Phase 1</span>
+              <h3>Orientation</h3>
+              <p>Learn the keyboard map, note names, Sargam labels, and which finger covers which zone. Do not chase speed here. The goal is visual familiarity and calm note entry.</p>
+            </article>
+            <article class="academy-path-card">
+              <span class="academy-step">Phase 2</span>
+              <h3>Air Stability</h3>
+              <p>Train the bellows so the tone stays even when you change notes. Uneven air is the main reason beginners sound unstable. Hold long notes and watch for wobble in volume or tone.</p>
+            </article>
+            <article class="academy-path-card">
+              <span class="academy-step">Phase 3</span>
+              <h3>Scale Discipline</h3>
+              <p>Practice straight scales, broken patterns, and alankars in one tonic until finger motion becomes predictable. Only then start changing tonic and octave settings.</p>
+            </article>
+            <article class="academy-path-card">
+              <span class="academy-step">Phase 4</span>
+              <h3>Expression</h3>
+              <p>Add dynamics through bellows, ornamentation through grace notes, and phrase logic through proper pauses and landings. This is where the instrument begins to sound musical rather than mechanical.</p>
+            </article>
+            <article class="academy-path-card">
+              <span class="academy-step">Phase 5</span>
+              <h3>Accompaniment</h3>
+              <p>Support vocals or lead lines with drones, simple chord movement, and restrained fills. Professional accompaniment means helping the melody breathe, not crowding it.</p>
+            </article>
+            <article class="academy-path-card">
+              <span class="academy-step">Phase 6</span>
+              <h3>Performance Readiness</h3>
+              <p>Prepare entry pitch, register choice, bellows reserve, phrase pacing, and calm recovery when mistakes happen. Consistency matters more than complexity in real performance.</p>
+            </article>
+          </div>
+        </section>
+
+        <section id="instrument-map" class="academy-section">
+          <div class="academy-section__header">
+            <p class="academy-eyebrow">2. Instrument Map</p>
+            <h2>Understand What Each Visible Control Means Musically</h2>
+          </div>
+          <div class="academy-card-grid">
+            <article class="academy-card">
+              <h3>Sa Root</h3>
+              <p>Choose the tonic before everything else. If the tonic is wrong, every scale, drone, and AI phrase becomes musically misleading. Match `Sa` to the vocalist, the reference pitch, or the composition key.</p>
+            </article>
+            <article class="academy-card">
+              <h3>Starting Octave</h3>
+              <p>Shift the visible keyboard range to where your melody actually lives. Use lower ranges for male vocal support or calm alap movement. Use middle ranges for bhajan, film melody, and teaching.</p>
+            </article>
+            <article class="academy-card">
+              <h3>Reed Stops</h3>
+              <p>`Bass` adds body, `Male` gives the main reed identity, and `Female` adds brighter upper presence. Start with `Male` alone or `Bass + Male`. Add `Female` only when the phrase calls for more shine.</p>
+            </article>
+            <article class="academy-card">
+              <h3>Coupler</h3>
+              <p>Use coupler carefully. It doubles the upper octave and can quickly make the sound feel larger, but too much coupler can blur precise classical or accompaniment work.</p>
+            </article>
+            <article class="academy-card">
+              <h3>Bellows Pressure</h3>
+              <p>This is your real musical engine. If the air is unstable, pitch and articulation may still be correct, but the performance will sound amateur. Practice evenness before volume.</p>
+            </article>
+            <article class="academy-card">
+              <h3>Attack And Release</h3>
+              <p>Shorter attack is useful for crisp phrases. Slightly longer attack helps lyrical entries. Release affects how naturally phrases end. For training, keep them moderate so every note remains audible and honest.</p>
+            </article>
+          </div>
+
+          <div class="academy-table-wrap">
+            <table class="academy-table">
+              <thead>
+                <tr>
+                  <th>Practice Goal</th>
+                  <th>Recommended Setup</th>
+                  <th>Reason</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Scale training</td>
+                  <td>Male reed, coupler off, drones off</td>
+                  <td>Clearest way to hear accuracy and finger consistency</td>
+                </tr>
+                <tr>
+                  <td>Bhajan support</td>
+                  <td>Bass + Male, Sa drone, moderate release</td>
+                  <td>Warm support without excess brightness</td>
+                </tr>
+                <tr>
+                  <td>Film melody</td>
+                  <td>Bass + Male + Female, coupler optional</td>
+                  <td>Fuller cinematic tone with more color</td>
+                </tr>
+                <tr>
+                  <td>Fast taan</td>
+                  <td>Male or Male + Female, shorter release</td>
+                  <td>Keeps fast note movement from becoming muddy</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section id="posture-bellows" class="academy-section">
+          <div class="academy-section__header">
+            <p class="academy-eyebrow">3. Posture And Bellows</p>
+            <h2>The Best Players Sound Calm Because Their Air Is Calm</h2>
+          </div>
+          <div class="academy-two-column">
+            <article class="academy-card academy-card--deep">
+              <h3>Playing Posture</h3>
+              <ul class="academy-list">
+                <li>Sit high enough that the wrist stays relaxed and does not dip below the key surface.</li>
+                <li>Keep shoulders dropped. Tension in shoulders creates tension in fingers and bellows.</li>
+                <li>Do not lean into the keyboard. Let the hand float over the keys and drop weight naturally.</li>
+                <li>Keep the note-playing hand curved and quiet. Large finger lifts waste time and reduce accuracy.</li>
+              </ul>
+            </article>
+            <article class="academy-card academy-card--deep">
+              <h3>Bellows Discipline</h3>
+              <ul class="academy-list">
+                <li>Pump before the tone collapses, not after it collapses.</li>
+                <li>Make small controlled refills rather than dramatic pushes.</li>
+                <li>Hold a single note for eight counts and listen for level consistency.</li>
+                <li>Practice moving between notes while keeping the same air pressure and color.</li>
+              </ul>
+            </article>
+          </div>
+          <div class="academy-callout">
+            <strong>Bellows Exercise:</strong>
+            <span>Hold `Sa` for 8 beats, then `Pa` for 8 beats, then `Sa` again for 8 beats. Repeat while keeping the tone equally full across all three notes. Do not increase air only when you feel weak tone; train steady reserve instead.</span>
+          </div>
+        </section>
+
+        <section id="fingering" class="academy-section">
+          <div class="academy-section__header">
+            <p class="academy-eyebrow">4. Fingering System</p>
+            <h2>Consistent Fingering Creates Reliable Speed Later</h2>
+          </div>
+          <div class="academy-card-grid">
+            <article class="academy-card">
+              <h3>Primary Rule</h3>
+              <p>Use the same fingering for the same pattern until it becomes automatic. Changing fingering every time feels flexible, but it stops the brain from building a stable map.</p>
+            </article>
+            <article class="academy-card">
+              <h3>Thumb Use</h3>
+              <p>Use the thumb as a stable pivot, not a frantic rescue finger. The best phrasing comes when the hand shape stays organized rather than collapsing inward.</p>
+            </article>
+            <article class="academy-card">
+              <h3>Crossing</h3>
+              <p>In longer ascending or descending patterns, train smooth finger crossing so the hand glides rather than jumps. Crossing should feel like a hand replacement, not a reach.</p>
+            </article>
+            <article class="academy-card">
+              <h3>Phrase Planning</h3>
+              <p>Choose fingering based on the landing note. If the phrase resolves to `Sa`, `Pa`, or `Ga`, plan the entire run so a strong finger lands there comfortably.</p>
+            </article>
+          </div>
+
+          <div class="academy-drill-grid">
+            <article class="academy-drill">
+              <span class="academy-drill__level">Beginner</span>
+              <h3>Straight Scale</h3>
+              <p>Play `Sa Re Ga Ma Pa Dha Ni Sa` slowly with absolutely even tone. Then descend with the same calm finger logic.</p>
+            </article>
+            <article class="academy-drill">
+              <span class="academy-drill__level">Intermediate</span>
+              <h3>Three-Note Groups</h3>
+              <p>Practice `Sa Re Ga`, `Re Ga Ma`, `Ga Ma Pa` and continue up the scale. This improves control of short phrase units.</p>
+            </article>
+            <article class="academy-drill">
+              <span class="academy-drill__level">Advanced</span>
+              <h3>Landing Discipline</h3>
+              <p>Run fast passages but always land clearly on `Sa`, `Ma`, and `Pa` without rushing through the resolution.</p>
+            </article>
+          </div>
+        </section>
+
+        <section id="foundation-drills" class="academy-section">
+          <div class="academy-section__header">
+            <p class="academy-eyebrow">5. Foundation Drills</p>
+            <h2>Daily Exercises That Build Professional Stability</h2>
+          </div>
+          <div class="academy-routine-grid">
+            <article class="academy-routine-card">
+              <h3>10-Minute Tone Block</h3>
+              <p>Hold single notes, then alternate pairs. The aim is even air, identical note attack, and zero panic pumping.</p>
+            </article>
+            <article class="academy-routine-card">
+              <h3>10-Minute Scale Block</h3>
+              <p>Play one major scale and one raga-flavored scale pattern in the chosen tonic. Keep every repetition slower than your ego wants.</p>
+            </article>
+            <article class="academy-routine-card">
+              <h3>10-Minute Pattern Block</h3>
+              <p>Use alankars such as `Sa Re Sa`, `Sa Re Ga Re`, and `Sa Re Ga Ma / Re Ga Ma Pa`. Focus on clean transitions and equal note size.</p>
+            </article>
+            <article class="academy-routine-card">
+              <h3>10-Minute Phrase Block</h3>
+              <p>Generate a phrase with SNS AI, then repeat it manually until the contour, pauses, and landings sound intentional.</p>
+            </article>
+          </div>
+        </section>
+
+        <section id="ornamentation" class="academy-section">
+          <div class="academy-section__header">
+            <p class="academy-eyebrow">6. Ornamentation</p>
+            <h2>Grace, Motion, And Taste Matter More Than Raw Speed</h2>
+          </div>
+          <div class="academy-two-column">
+            <article class="academy-card">
+              <h3>Kan Swara</h3>
+              <p>Approach the main note through a quick neighboring grace. Keep it subtle. The listener should feel the touch, not hear a clumsy extra note.</p>
+            </article>
+            <article class="academy-card">
+              <h3>Murki</h3>
+              <p>Use a very short cluster of notes to add liveliness. Practice this slowly first. Murki should sparkle, not smear.</p>
+            </article>
+            <article class="academy-card">
+              <h3>Andolan Feeling</h3>
+              <p>While the keyboard is discrete, expression still comes through timing, note repetition, and controlled bellows emphasis near the focal swara.</p>
+            </article>
+            <article class="academy-card">
+              <h3>Phrase Breathing</h3>
+              <p>Leave space. One of the fastest signs of maturity is knowing where not to play. Silence helps the phrase mean something.</p>
+            </article>
+          </div>
+        </section>
+
+        <section id="accompaniment" class="academy-section">
+          <div class="academy-section__header">
+            <p class="academy-eyebrow">7. Accompaniment Skills</p>
+            <h2>Support The Singer Without Becoming The Center Of Attention</h2>
+          </div>
+          <div class="academy-card academy-card--wide">
+            <p>
+              Professional accompaniment means you protect the singer’s pitch, rhythm, and emotional line. Use drones carefully, keep fills short, and avoid decorative overload during lyrics. In bhajan and semi-classical accompaniment, the harmonium should reinforce the melodic framework, not compete against it.
+            </p>
+          </div>
+          <div class="academy-table-wrap">
+            <table class="academy-table">
+              <thead>
+                <tr>
+                  <th>Situation</th>
+                  <th>What To Play</th>
+                  <th>What To Avoid</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Vocal entry</td>
+                  <td>Simple tonic support and quiet lead-in</td>
+                  <td>Busy fill that masks the singer’s first note</td>
+                </tr>
+                <tr>
+                  <td>Between lines</td>
+                  <td>Short answering phrase or rest</td>
+                  <td>Overplaying every gap</td>
+                </tr>
+                <tr>
+                  <td>Bhajan chorus</td>
+                  <td>Warm drone and stable support notes</td>
+                  <td>Sudden register changes and bright coupler clutter</td>
+                </tr>
+                <tr>
+                  <td>Classical support</td>
+                  <td>Precise swara support and calm bellows</td>
+                  <td>Heavy chords that flatten the raga identity</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section id="solo-playing" class="academy-section">
+          <div class="academy-section__header">
+            <p class="academy-eyebrow">8. Solo Playing</p>
+            <h2>How To Sound Intentional When You Are The Lead Voice</h2>
+          </div>
+          <div class="academy-card-grid">
+            <article class="academy-card">
+              <h3>Open Calmly</h3>
+              <p>Begin with a stable note or a simple phrase. A confident opening is better than a flashy but unstable one.</p>
+            </article>
+            <article class="academy-card">
+              <h3>Shape Phrases</h3>
+              <p>Let each phrase rise, arrive, and resolve. Do not play every note at the same emotional weight.</p>
+            </article>
+            <article class="academy-card">
+              <h3>Use Register Changes Sparingly</h3>
+              <p>Changing stops or coupler should support the emotional moment, not happen just because the control exists.</p>
+            </article>
+            <article class="academy-card">
+              <h3>Leave Landmarks</h3>
+              <p>Return clearly to anchor notes so the listener never loses the melodic center.</p>
+            </article>
+          </div>
+        </section>
+
+        <section id="snsai-controls" class="academy-section">
+          <div class="academy-section__header">
+            <p class="academy-eyebrow">9. SNSAI Controls</p>
+            <h2>How To Use The Built-In Features For Serious Practice</h2>
+          </div>
+          <div class="academy-card-grid">
+            <article class="academy-card">
+              <h3>Preset Buttons</h3>
+              <p>Use `Classical` for disciplined training, `Bhajan` for accompaniment warmth, `Film Glow` for richer melodic color, and `Bright Lead` for agile practice where articulation must stay clean.</p>
+            </article>
+            <article class="academy-card">
+              <h3>AI Phrase Generator</h3>
+              <p>Generate a phrase, listen once, then copy it manually. The goal is not to depend on the AI. The goal is to sharpen ear-to-finger translation.</p>
+            </article>
+            <article class="academy-card">
+              <h3>AI Precision</h3>
+              <p>Keep this higher when you want clearer pedagogical phrases. Lower it slightly only after your fundamentals improve and you want more variation.</p>
+            </article>
+            <article class="academy-card">
+              <h3>Ornament Depth</h3>
+              <p>Start modest. Too much ornament before finger control is ready will only train unevenness.</p>
+            </article>
+            <article class="academy-card">
+              <h3>Display Mode</h3>
+              <p>Use full labels in the early stage. Once the keyboard map is memorized, switch to simpler modes so the hand stops depending on visual prompting.</p>
+            </article>
+            <article class="academy-card">
+              <h3>Drones</h3>
+              <p>Use `Sa` most often. Add `Pa` or `Ni` only when the style, tonic, and phrase structure justify it.</p>
+            </article>
+          </div>
+        </section>
+
+        <section id="professional-routine" class="academy-section">
+          <div class="academy-section__header">
+            <p class="academy-eyebrow">10. Professional Routine</p>
+            <h2>A 30-Minute Daily Plan That Actually Produces Results</h2>
+          </div>
+          <div class="academy-timeline">
+            <div class="academy-timeline__item">
+              <strong>Minutes 1-5</strong>
+              <p>Bellows warmup on long notes with one reed bank only.</p>
+            </div>
+            <div class="academy-timeline__item">
+              <strong>Minutes 6-12</strong>
+              <p>One scale up and down, then one three-note alankar cycle.</p>
+            </div>
+            <div class="academy-timeline__item">
+              <strong>Minutes 13-18</strong>
+              <p>Phrase copying from SNS AI preview or a chosen composition line.</p>
+            </div>
+            <div class="academy-timeline__item">
+              <strong>Minutes 19-24</strong>
+              <p>Accompaniment simulation with Sa drone and quiet support notes.</p>
+            </div>
+            <div class="academy-timeline__item">
+              <strong>Minutes 25-30</strong>
+              <p>One performance take: no stopping, no correction, only musical continuity.</p>
+            </div>
+          </div>
+        </section>
+
+        <section id="performance-checklist" class="academy-section academy-section--final">
+          <div class="academy-section__header">
+            <p class="academy-eyebrow">11. Stage Checklist</p>
+            <h2>What Professionals Check Before They Start Playing</h2>
+          </div>
+          <div class="academy-checklist-grid">
+            <div class="academy-check">Correct `Sa Root` selected</div>
+            <div class="academy-check">Preferred octave range visible</div>
+            <div class="academy-check">Reed stops chosen for style</div>
+            <div class="academy-check">Bellows reserve stable before entry</div>
+            <div class="academy-check">Drone choice tested and not too loud</div>
+            <div class="academy-check">Opening phrase practiced once slowly</div>
+            <div class="academy-check">Hands relaxed, shoulders released</div>
+            <div class="academy-check">Mental tempo decided before the first note</div>
+          </div>
+          <div class="academy-callout academy-callout--final">
+            <strong>Professional Principle:</strong>
+            <span>Never confuse complexity with mastery. A simple phrase played with stable air, beautiful tone, and perfect resolution sounds more professional than a crowded passage that loses control.</span>
+          </div>
+        </section>
+      </main>
+    </div>
+    <script src="/harmonium_academy.js" defer></script>
+  </body>
+</html>

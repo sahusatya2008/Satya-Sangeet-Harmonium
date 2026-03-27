@@ -1,0 +1,20 @@
+Harmonium sample notice
+
+These local MP3 preview files are derived from the CC0 Freesound harmonium pack by
+"cabled_mess", based on recordings credited by that pack to "donyaquick".
+
+Pack page:
+https://freesound.org/people/cabled_mess/packs/29512/
+
+License:
+Creative Commons 0 (CC0)
+https://creativecommons.org/publicdomain/zero/1.0/
+
+Local files and source pages:
+- harmonium_c3.mp3 -> https://freesound.org/people/cabled_mess/sounds/523878/
+- harmonium_f3.mp3 -> https://freesound.org/people/cabled_mess/sounds/523882/
+- harmonium_g3.mp3 -> https://freesound.org/people/cabled_mess/sounds/523888/
+- harmonium_c4.mp3 -> https://freesound.org/people/cabled_mess/sounds/523877/
+- harmonium_f4.mp3 -> https://freesound.org/people/cabled_mess/sounds/523885/
+- harmonium_a4.mp3 -> https://freesound.org/people/cabled_mess/sounds/523857/
+- harmonium_c5.mp3 -> https://freesound.org/people/cabled_mess/sounds/523876/

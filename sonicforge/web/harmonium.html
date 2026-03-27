@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Satya Sangeet Harmonium by SNSAI</title>
+    <link rel="stylesheet" href="/harmonium.css" />
+  </head>
+  <body class="harmonium-page">
+    <div class="harmonium-shell">
+      <aside class="instrument-sidebar">
+        <section class="sidebar-card hero-card">
+          <div class="title-crest">SNSAI Signature Series</div>
+          <p class="eyebrow">Premium Concert Instrument</p>
+          <h1 class="premium-title">
+            <span class="premium-title-line premium-title-line--main">Satya Sangeet</span>
+            <span class="premium-title-line premium-title-line--hero">Harmonium</span>
+            <span class="premium-title-line premium-title-line--signature">by SNSAI</span>
+          </h1>
+          <div class="premium-rule">
+            <span></span>
+            <strong>Concert Edition</strong>
+            <span></span>
+          </div>
+          <p class="lede">
+            A dedicated concert harmonium surface with live Sargam labels, western note names,
+            computer-key mapping, reed-bank stops, manual bellows control, drones, and playable
+            studio voicing.
+          </p>
+          <div class="badge-row">
+            <span class="badge">Playable by Mouse</span>
+            <span class="badge">Playable by Keyboard</span>
+            <span class="badge">2 Octaves + C</span>
+          </div>
+          <div class="hero-actions">
+            <a class="hero-link-button" href="/academy">Open Documentation And Training</a>
+          </div>
+        </section>
+
+        <section class="sidebar-card">
+          <div class="section-heading">
+            <h2>Instrument Layout</h2>
+            <p>Choose the tonic, visible range, and how the labels are shown on the keybed.</p>
+          </div>
+          <div class="control-grid">
+            <label>
+              Sa Root
+              <select id="sa-root">
+                <option value="0">C</option>
+                <option value="1">C# / Db</option>
+                <option value="2">D</option>
+                <option value="3">D# / Eb</option>
+                <option value="4">E</option>
+                <option value="5">F</option>
+                <option value="6">F# / Gb</option>
+                <option value="7">G</option>
+                <option value="8">G# / Ab</option>
+                <option value="9">A</option>
+                <option value="10">A# / Bb</option>
+                <option value="11">B</option>
+              </select>
+            </label>
+            <label>
+              Starting Octave
+              <select id="base-octave">
+                <option value="2">C2 to C4</option>
+                <option value="3" selected>C3 to C5</option>
+                <option value="4">C4 to C6</option>
+              </select>
+            </label>
+            <label>
+              Key Labels
+              <select id="display-mode">
+                <option value="all">Notes + Sargam + Keyboard</option>
+                <option value="notes">Notes + Keyboard</option>
+                <option value="sargam">Sargam + Keyboard</option>
+                <option value="minimal">Keyboard Only</option>
+              </select>
+            </label>
+            <label>
+              Harmony Preset
+              <div class="preset-row">
+                <button class="preset-button active" data-preset="classical" type="button">Classical</button>
+                <button class="preset-button" data-preset="bhajan" type="button">Bhajan</button>
+                <button class="preset-button" data-preset="film" type="button">Film Glow</button>
+                <button class="preset-button" data-preset="bright" type="button">Bright Lead</button>
+              </div>
+            </label>
+          </div>
+        </section>
+
+        <section class="sidebar-card">
+          <div class="section-heading">
+            <h2>Reed And Bellows Controls</h2>
+            <p>These controls reshape the harmonium voice in real time without reloading the page.</p>
+          </div>
+          <div class="slider-stack">
+            <label>
+              Master Volume
+              <div class="slider-label"><span>Output level</span><strong id="volume-value">76%</strong></div>
+              <input id="master-volume" type="range" min="10" max="100" value="76" />
+            </label>
+            <label>
+              Bellows Pressure
+              <div class="slider-label"><span>Air reserve</span><strong id="bellows-target-value">74%</strong></div>
+              <input id="bellows-pressure" type="range" min="20" max="100" value="74" />
+            </label>
+            <label>
+              Reed Brightness
+              <div class="slider-label"><span>Upper harmonics</span><strong id="brightness-value">58%</strong></div>
+              <input id="brightness" type="range" min="10" max="100" value="58" />
+            </label>
+            <label>
+              Attack
+              <div class="slider-label"><span>Key onset</span><strong id="attack-value">18 ms</strong></div>
+              <input id="attack" type="range" min="5" max="120" value="18" />
+            </label>
+            <label>
+              Release
+              <div class="slider-label"><span>Bellows tail</span><strong id="release-value">240 ms</strong></div>
+              <input id="release" type="range" min="80" max="900" value="240" />
+            </label>
+            <label>
+              Concert Reverb
+              <div class="slider-label"><span>Hall bloom</span><strong id="reverb-value">18%</strong></div>
+              <input id="reverb-mix" type="range" min="0" max="100" value="18" />
+            </label>
+            <label>
+              Drone Volume
+              <div class="slider-label"><span>Sustained tonic</span><strong id="drone-volume-value">58%</strong></div>
+              <input id="drone-volume" type="range" min="10" max="100" value="58" />
+            </label>
+          </div>
+
+          <div class="toggle-groups">
+            <div class="toggle-group">
+              <p class="group-title">Reed Stops</p>
+              <div class="toggle-row">
+                <button class="toggle-pill active" data-stop="bass" type="button">Bass Reed</button>
+                <button class="toggle-pill active" data-stop="male" type="button">Male Reed</button>
+                <button class="toggle-pill" data-stop="female" type="button">Female Reed</button>
+              </div>
+            </div>
+            <div class="toggle-group">
+              <p class="group-title">Performance Modes</p>
+              <div class="toggle-row">
+                <button class="toggle-pill active" data-mode="auto-bellows" type="button">Auto Bellows</button>
+                <button class="toggle-pill" data-mode="coupler" type="button">Coupler</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="sidebar-card">
+          <div class="section-heading">
+            <h2>SNS AI Harmonium Coach</h2>
+            <p>Generate a precise playable phrase for the current tonic, preset, and harmonium register bank.</p>
+          </div>
+          <div class="control-grid">
+            <label>
+              Playing Intent
+              <select id="ai-intent">
+                <option value="alap">Classical Alap</option>
+                <option value="bhajan">Bhajan Lead</option>
+                <option value="film">Film Melody</option>
+                <option value="taan">Fast Taan</option>
+              </select>
+            </label>
+            <label>
+              Phrase Length
+              <div class="slider-label"><span>Number of guided notes</span><strong id="ai-length-value">8 notes</strong></div>
+              <input id="ai-length" type="range" min="4" max="16" value="8" />
+            </label>
+            <label>
+              Ornament Depth
+              <div class="slider-label"><span>Grace notes and turns</span><strong id="ai-ornament-value">36%</strong></div>
+              <input id="ai-ornament" type="range" min="0" max="100" value="36" />
+            </label>
+            <label>
+              AI Precision
+              <div class="slider-label"><span>How tightly SNS AI follows a clean phrase contour</span><strong id="ai-precision-value">84%</strong></div>
+              <input id="ai-precision" type="range" min="40" max="100" value="84" />
+            </label>
+            <div class="toggle-row">
+              <button id="ai-generate" type="button">Generate Phrase</button>
+              <button id="ai-preview" class="ghost-button" type="button">Preview Phrase</button>
+            </div>
+            <div id="ai-summary" class="ai-summary">
+              Ready to generate a harmonium phrase with tonic-aware note guidance.
+            </div>
+          </div>
+        </section>
+
+        <section class="sidebar-card">
+          <div class="section-heading">
+            <h2>Performance Guide</h2>
+            <p>The keybed is fully labeled. You can also drive it from the computer keyboard.</p>
+          </div>
+          <div class="guide-grid">
+            <div class="guide-item"><strong>Play Notes</strong><span>Click keys or press the printed keyboard letter.</span></div>
+            <div class="guide-item"><strong>Bellows Pump</strong><span>Press <kbd>Space</kbd> for a manual air push when auto bellows is off.</span></div>
+            <div class="guide-item"><strong>Panic</strong><span>Press <kbd>Backspace</kbd> or the panic button to release every voice.</span></div>
+            <div class="guide-item"><strong>Drone Bank</strong><span>Toggle Sa, Pa, and Ni to hold a live harmonium bed under the melody.</span></div>
+          </div>
+        </section>
+      </aside>
+
+      <main class="instrument-main">
+        <section class="stage-card">
+          <div class="stage-header">
+            <div>
+              <p class="eyebrow">Realtime Instrument</p>
+              <h2>Concert Harmonium Stage</h2>
+              <p class="stage-copy">
+                Every key shows the note name, its current Sargam function for the selected tonic,
+                and the exact computer-key shortcut that triggers it.
+              </p>
+            </div>
+            <div class="status-cluster">
+              <div class="status-pill">
+                <span>Engine</span>
+                <strong id="sample-engine-status">Loading samples</strong>
+              </div>
+              <div class="status-pill">
+                <span>Bellows</span>
+                <strong id="bellows-live">74%</strong>
+              </div>
+              <div class="status-pill">
+                <span>Tonic</span>
+                <strong id="tonic-live">Sa = C</strong>
+              </div>
+              <div class="status-pill wide">
+                <span>Registers</span>
+                <strong id="register-live">Bass + Male</strong>
+              </div>
+              <div class="status-pill">
+                <span>Reverb</span>
+                <strong id="reverb-live">Bloom 18%</strong>
+              </div>
+              <button id="panic-button" class="panic-button" type="button">Panic Stop</button>
+            </div>
+          </div>
+
+          <div class="harmonium-stage">
+            <div class="stage-glow"></div>
+            <div class="harmonium-scene">
+              <div class="instrument-shadow"></div>
+              <div class="harmonium-case">
+                <div class="case-base"></div>
+                <div class="case-side case-side-left"></div>
+                <div class="case-side case-side-right"></div>
+                <div class="lid-plane">
+                  <div class="maker-plate">Satya Sangeet</div>
+                  <div class="grille-cluster">
+                    <span></span><span></span><span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span><span></span><span></span>
+                  </div>
+                </div>
+
+                <div class="keyboard-plane">
+                  <div class="stop-rail">
+                    <button class="stage-stop active" data-stop="bass" type="button">
+                      <span>Bass</span>
+                      <small>low reed</small>
+                    </button>
+                    <button class="stage-stop active" data-stop="male" type="button">
+                      <span>Male</span>
+                      <small>main reed</small>
+                    </button>
+                    <button class="stage-stop" data-stop="female" type="button">
+                      <span>Female</span>
+                      <small>upper reed</small>
+                    </button>
+                    <button class="stage-stop" data-mode="coupler" type="button">
+                      <span>Coupler</span>
+                      <small>octave double</small>
+                    </button>
+                  </div>
+
+                  <div class="keyboard-frame">
+                    <div id="harmonium-keybed" class="harmonium-keybed" aria-label="Interactive harmonium keyboard"></div>
+                    <div class="keyboard-front-lip"></div>
+                  </div>
+                </div>
+
+                <div class="front-plane">
+                  <div class="drone-bank">
+                    <button class="drone-switch" data-drone="sa" type="button">
+                      <span>Sa Drone</span>
+                      <small id="drone-sa-label">C4</small>
+                    </button>
+                    <button class="drone-switch" data-drone="pa" type="button">
+                      <span>Pa Drone</span>
+                      <small id="drone-pa-label">G4</small>
+                    </button>
+                    <button class="drone-switch" data-drone="ni" type="button">
+                      <span>Ni Drone</span>
+                      <small id="drone-ni-label">B4</small>
+                    </button>
+                  </div>
+
+                  <div class="bellows-panel">
+                    <div id="bellows-visual" class="bellows-visual" aria-hidden="true">
+                      <span></span><span></span><span></span><span></span><span></span><span></span>
+                    </div>
+                    <div class="bellows-actions">
+                      <button id="pump-bellows" class="pump-button" type="button">Pump Bellows</button>
+                      <span id="pump-hint">Spacebar also pumps the bellows.</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="detail-grid">
+          <article class="detail-card">
+            <div class="detail-heading">
+              <h3>Note Readout</h3>
+              <p>Live detail for the most recent note or drone that touched the reed bank.</p>
+            </div>
+            <div id="note-readout" class="note-readout">
+              <div class="readout-main">
+                <strong>Sa Root Ready</strong>
+                <span>Play any key to see the current pitch, Sargam function, and keyboard shortcut.</span>
+              </div>
+            </div>
+            <div class="readout-grid">
+              <div class="stat-box">
+                <span>Keyboard</span>
+                <strong id="shortcut-readout">Z to I</strong>
+              </div>
+              <div class="stat-box">
+                <span>Frequency</span>
+                <strong id="frequency-readout">Idle</strong>
+              </div>
+              <div class="stat-box">
+                <span>Drones</span>
+                <strong id="drone-readout">Off</strong>
+              </div>
+              <div class="stat-box">
+                <span>Pressed Keys</span>
+                <strong id="pressed-count">0 active</strong>
+              </div>
+            </div>
+          </article>
+
+          <article class="detail-card">
+            <div class="detail-heading">
+              <h3>Controller Sheet</h3>
+              <p>The printed key labels and the live data below stay synced with your current tonic.</p>
+            </div>
+            <div id="mapping-summary" class="mapping-summary"></div>
+            <div class="detail-subsection">
+              <div class="detail-heading compact">
+                <h3>SNS AI Phrase Track</h3>
+                <p>Preview notes light up directly on the keyboard for accurate practice.</p>
+              </div>
+              <div id="ai-phrase-track" class="ai-phrase-track">
+                <p class="empty-copy">No AI phrase has been generated yet.</p>
+              </div>
+            </div>
+            <div id="active-stack" class="active-stack">
+              <p class="empty-copy">No notes are currently pressed.</p>
+            </div>
+          </article>
+        </section>
+      </main>
+    </div>
+
+    <footer class="page-credit" aria-label="Developer credit">
+      <div class="page-credit__inner">
+        <span class="page-credit__label">Developed by</span>
+        <div class="developer-signature">
+          <span class="developer-signature__name">Satya Narayan Sahu</span>
+          <span class="developer-signature__tick" aria-hidden="true">
+            <span class="developer-signature__check">✓</span>
+          </span>
+        </div>
+      </div>
+    </footer>
+
+    <script src="/harmonium.js" defer></script>
+  </body>
+</html>

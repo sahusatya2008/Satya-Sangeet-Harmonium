@@ -1,0 +1,2 @@
+"""Launchable apps for SonicForge."""
+
