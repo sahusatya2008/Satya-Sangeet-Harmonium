@@ -28,12 +28,12 @@ Let me break down how the whole system works:
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│                    YOU (The User)                            │
+│                    YOU (The User)                           │
 └─────────────────────┬───────────────────────────────────────┘
                       │
                       ▼
-┌─────────────────────────────────────────────────────────────┐
-│              Choose Your Interface                           │
+┌────────────────────────────────────────────────────────────┐
+│              Choose Your Interface                         │
 │  ┌─────────────────┐           ┌─────────────────┐         │
 │  │  Desktop App    │           │   Web Browser   │         │
 │  │  (Tkinter GUI)  │           │   (HTTP App)    │         │
@@ -44,17 +44,17 @@ Let me break down how the whole system works:
                            │
                            ▼
 ┌─────────────────────────────────────────────────────────────┐
-│                    API Gateway                               │
-│         (Handles all your requests)                          │
+│                    API Gateway                              │
+│         (Handles all your requests)                         │
 └─────────────────────┬───────────────────────────────────────┘
                       │
                       ▼
 ┌─────────────────────────────────────────────────────────────┐
-│                 CORE ENGINE                                  │
-│  ┌─────────────┐ ┌─────────────┐ ┌─────────────┐          │
-│  │  Composer   │ │  MixMaster  │ │  AcademyAI  │          │
-│  │ (Makes Music)│ │ (Mixes Audio)│ │ (Teaches)   │          │
-│  └─────────────┘ └─────────────┘ └─────────────┘          │
+│                 CORE ENGINE                                 │
+│  ┌─────────────┐ ┌─────────────┐ ┌─────────────┐            │
+│  │  Harmonium  │ │Harmonium AI │ │  AcademyAI  │            │
+│  │ ( Play it ) │ │(A testing   │ │ (Teaches)   │            │
+│  └─────────────┘ └─────────────┘ └─────────────┘            │
 └─────────────────────────────────────────────────────────────┘
 ```
 
@@ -438,7 +438,7 @@ Building this project taught me:
 
 ---
 
-## 📚 Technical Deep Dive
+## Technical Deep Dive
 
 Want to know more? Check out the **Architecture Document** at:
 `Architecture/document.md`
