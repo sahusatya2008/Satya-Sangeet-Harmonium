@@ -53,7 +53,7 @@ Let me break down how the whole system works:
 │                 CORE ENGINE                                 │
 │  ┌─────────────┐ ┌─────────────┐ ┌─────────────┐            │
 │  │  Harmonium  │ │Harmonium AI │ │  AcademyAI  │            │
-│  │ ( Play it ) │ │(A testing   │ │ (Teaches)   │            │
+│  │ ( Play it ) │ │(A testing)  │ │ (Teaches)   │            │
 │  └─────────────┘ └─────────────┘ └─────────────┘            │
 └─────────────────────────────────────────────────────────────┘
 ```
