@@ -499,7 +499,7 @@ For licensing inquiries, contact: **Satya Narayan Sahu**
 
 ## Conclusion
 
-SonicForge X is my passion project that combines my love for music and coding. It's not perfect, but it's a solid foundation for an AI-powered music production system.
+Satya Sangeet Harmonium is my passion project that combines my love for music and coding. It's not perfect, but it's a solid foundation for an AI-powered music production system.
 
 The best part? I built the entire core engine using only Python's built-in libraries - no fancy frameworks or external packages needed for the main functionality!
 
